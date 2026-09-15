@@ -65,3 +65,11 @@ Cada respuesta del webservice se procesa de forma asíncrona (`Response.Listener
 
 - Android Studio
 - El webservice **WS-SENATI** debe estar corriendo y accesible desde la red local (ver IP configurada en cada Activity que consume la API)
+
+## Ejecutar en el emulador de Android Studio
+
+Si usas el emulador, antes de correr la app ejecuta en la terminal:
+​```
+adb reverse tcp:3000 tcp:3000
+​```
+Esto permite que el emulador acceda al webservice corriendo en `localhost:3000` de tu PC. Este comando debe repetirse cada vez que se reinicie el emulador.
