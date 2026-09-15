@@ -32,7 +32,7 @@ public class Buscador extends AppCompatActivity {
 
     RequestQueue requestQueue;
 
-    private final String URL = "http://192.168.101.66:3000/alumnos";
+    private final String URL = "http://localhost:3000/alumnos";
 
     private void loadUI(){
         edtIdB = findViewById(R.id.edtIdB);

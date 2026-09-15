@@ -55,11 +55,11 @@ Cada respuesta del webservice se procesa de forma asíncrona (`Response.Listener
 - [x] CRUD funcional (Registro, Listado, Buscador, ListaDetallada con RecyclerView)
 - [x] Consumo del webservice mediante Volley
 - [x] Manejo de errores del servidor (por ejemplo, 404 en Buscador)
-- [ ] Pantalla de Login
-- [ ] Splash screen (Activity, 1-3 seg)
-- [ ] Navegación completa desde el Menú (conectar botones a cada pantalla)
-- [ ] Ícono personalizado de la app
-- [ ] Validación de campos vacíos en Registro
+- [x] Pantalla de Login
+- [x] Splash screen (Activity, 1-3 seg)
+- [x] Navegación completa desde el Menú (conectar botones a cada pantalla)
+- [x] Ícono personalizado de la app
+- [x] Validación de campos vacíos en Registro
 
 ## Requisitos para ejecutar
 

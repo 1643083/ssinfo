@@ -32,7 +32,7 @@ public class Registro extends AppCompatActivity {
     RequestQueue requestQueue;
 
     //2. endpoint (dirección que apunta ws)
-    private final String URL = "http://192.168.101.66:3000/alumnos";
+    private final String URL = "http://localhost:3000/alumnos";
 
     private void loadUI(){
         edtApellidos = findViewById(R.id.edtApellidos);
@@ -98,6 +98,22 @@ public class Registro extends AppCompatActivity {
 
     } //registar alumno
 
+    private boolean validarCampos(){
+        if (edtApellidos.getText().toString().trim().isEmpty()) {
+            edtApellidos.setError("El apellido es obligatorio");
+            return false;
+        }
+        if (edtNombres.getText().toString().trim().isEmpty()) {
+            edtNombres.setError("El nombre es obligatorio");
+            return false;
+        }
+        if (edtTelefono.getText().toString().trim().isEmpty()) {
+            edtTelefono.setError("El teléfono es obligatorio");
+            return false;
+        }
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +122,6 @@ public class Registro extends AppCompatActivity {
 
         this.loadUI();
 
-        btnGuardar.setOnClickListener(v -> { this.registrarAlumno(); });
+        btnGuardar.setOnClickListener(v -> { if(this.validarCampos()) { this.registrarAlumno(); } });
     }
 }

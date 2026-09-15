@@ -26,17 +26,15 @@ import java.util.ArrayList;
 
 public class ListaDetallada extends AppCompatActivity {
 
-    //contenedor temporal
-    ArrayList<String> listaAlumnos = new ArrayList<>();
-    //adaptador (transferir informacion obtenida del WS > lista > RV
     ArrayList<Alumno> lstAlumnos = new ArrayList<>();
+    //adaptador (transferir informacion obtenida del WS > lista > RV
     AdapterDatos adapterDatos;
     //view donde se renderizara
     RecyclerView RVAlumnos;
     //canal de comunicacion
     RequestQueue requestQueue;
     //endpoint del WS
-    private final String URL = "http://192.168.101.66:3000/alumnos";
+    private final String URL = "http://localhost:3000/alumnos";
 
     private void loadUI(){ RVAlumnos = findViewById(R.id.RVAlumnos); }
 
@@ -61,7 +59,7 @@ public class ListaDetallada extends AppCompatActivity {
                                 direccion = jsonObject.getString("direccion");
                                 telefono = jsonObject.getString("telefono");
 
-                                lstAlumnos.add(new Alumno(apellidos, nombres, direccion, telefono));
+                                lstAlumnos.add(new Alumno(apellidos, nombres, telefono, direccion));
                             } catch (JSONException e) {
                                 throw new RuntimeException(e);
                             }
